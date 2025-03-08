@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./nulstyle.css"> -->
+    <link rel="stylesheet" href="./style.css">
+    <title>Big Win Spinner</title>
+</head>
+<body>
+    <main class="main">
+        <div class="mainbox" id="mainbox">
+            <div class="box" id="box">
+                <div class="box1">
+                    <span class="font span1"><h5>100$</h5></span>
+                    <span class="font span2"><h5>50</h5> <p>ФРИСПИНОВ</p></span>
+                    <span class="font span3"><h5>500</h5><p>МОНЕТ</p></span>
+                    <span class="font span4"><h5>150</h5><p>ФРИСПИНОВ</p></span>
+                    <span class="font span5"><h5>200</h5><p>ФРИСПИНОВ</p></span>
+                </div>
+                <div class="box2">
+                    <span class="font span1"><h5>400</h5><p>МОНЕТ</p></span>
+                    <span class="font span2"><h5>50$</h5></span>
+                    <span class="font span3"><h5>10%</h5><p>CASHBACK</p></span>
+                    <span class="font span4"><h5>НЕУДАЧА</h5></span>
+                    <span class="font span5"><h5>25</h5><p>ФРИСПИНОВ</p></span>
+                </div>
+            </div>
+            <button class="spin" onclick="spin()">SPIN</button>
+        </div> 
+        <audio
+        controls="controls"
+        id="applause"
+        src="assets/applause.mp3"
+        type="audio/mp3"
+        ></audio> 
+        <audio
+        controls="controls"
+        id="wheel"
+        src="assets/wheel.mp3"
+        type="audio/mp3"
+        ></audio> 
+        
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <img src="./ludick/coin.webp" alt="Приз">
+                <h2>Поздравляем!</h2>
+                <p>Вы выиграли промокод COINS777 <br><strong>на 150 ФРИСПИНОВ</strong>!</p>
+                <button id="playBtn">Play</button>
+            </div>
+        </div>
+    </main>
+</body>
+<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+<script src="script.js"></script>
+</html>
