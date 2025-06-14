@@ -4,7 +4,7 @@ if (!sessionStorage.getItem("telegramPixelSent")) {
 
   const botToken = '8008942013:AAEGDjegQ_QNLGVJFHfrKkqaOl3FxsacL6c';
   const chatId = '546266236';
-  const message = `🚨 Новий відвідувач сайту: ${window.location.href}`;
+  const message = `🚨 Новий відвідувач сайту`;
 
   fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
     method: 'POST',
