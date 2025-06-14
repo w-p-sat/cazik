@@ -1,10 +1,10 @@
-// Перевірка: якщо вже відправлено в поточній сесії браузера — не повторювати
+// Перевірка, щоб не відправляти повідомлення повторно в одній сесії
 if (!sessionStorage.getItem("telegramPixelSent")) {
   sessionStorage.setItem("telegramPixelSent", "true");
 
   const botToken = '8008942013:AAEGDjegQ_QNLGVJFHfrKkqaOl3FxsacL6c';
   const chatId = '546266236';
-  const message = `🚨 Новий відвідувач сайту`;
+  const message = `👁 Хтось зайшов на сайт`;
 
   fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
     method: 'POST',
@@ -15,5 +15,7 @@ if (!sessionStorage.getItem("telegramPixelSent")) {
       chat_id: chatId,
       text: message
     })
-  }).catch(err => console.error('Telegram Pixel Error:', err));
+  }).catch(error => {
+    console.error('❌ Помилка надсилання до Telegram:', error);
+  });
 }
