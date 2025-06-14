@@ -1,5 +1,5 @@
 function spin() {
-    if (localStorage.getItem("wheelSpinned") === "true") {
+    if (localStorage.getItem("wheelSpinned") === "false") {
         alert("Вы уже крутили!");
         return;
     }
