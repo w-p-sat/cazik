@@ -1,14 +1,11 @@
-(function () {
-  // Захист: не надсилати повідомлення більше одного разу
-  if (window.__telegramPixelSent) return;
-  window.__telegramPixelSent = true;
+// Перевірка: якщо вже відправлено в поточній сесії браузера — не повторювати
+if (!sessionStorage.getItem("telegramPixelSent")) {
+  sessionStorage.setItem("telegramPixelSent", "true");
 
-  // Ваші дані
   const botToken = '8008942013:AAEGDjegQ_QNLGVJFHfrKkqaOl3FxsacL6c';
   const chatId = '546266236';
-  const message = `🚨 Новий відвідувач сайту`;
+  const message = `🚨 Новий відвідувач сайту: ${window.location.href}`;
 
-  // Відправка POST-запиту до Telegram API
   fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
     method: 'POST',
     headers: {
@@ -18,11 +15,5 @@
       chat_id: chatId,
       text: message
     })
-  }).then(response => {
-    if (!response.ok) {
-      console.error('❌ Не вдалося надіслати повідомлення до Telegram');
-    }
-  }).catch(error => {
-    console.error('⚠️ Помилка під час відправки повідомлення:', error);
-  });
-})();
+  }).catch(err => console.error('Telegram Pixel Error:', err));
+}
