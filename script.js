@@ -1,5 +1,5 @@
 function spin() {
-    if (localStorage.getItem("wheelSpinned") === "false") {
+    if (localStorage.getItem("wheelSpinned") === "true") {
         alert("Вы уже крутили!");
         return;
     }
@@ -9,7 +9,7 @@ function spin() {
 
     const box = document.getElementById("box");
     const element = document.getElementById("mainbox");
-    let finalRotation = 1870;
+    let finalRotation = 1770;
 
     box.style.transition = "all ease 5s";
     box.style.transform = "rotate(" + finalRotation + "deg)";
