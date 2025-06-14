@@ -9,7 +9,7 @@ function spin() {
 
     const box = document.getElementById("box");
     const element = document.getElementById("mainbox");
-    let finalRotation = 1770;
+    let finalRotation = 1870;
 
     box.style.transition = "all ease 5s";
     box.style.transform = "rotate(" + finalRotation + "deg)";
